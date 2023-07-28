@@ -1,108 +1,63 @@
-<?php require_once('../config.php') ?>
-
-<!DOCTYPE html>
-
-
-<?php  require_once '../config.php'; ?>
+<?php  require_once '../../config.php'; ?>
 <?php require_once aze.'static/nav.php'; ?>
 <?php require_once BL.'function/db.php'; ?>
 
-
-
-<?php 
-    $Login_fail = 0;
-    $Login_sucess = 0;
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      // 
-        // echo "<div class=bg-danger> asi zebi</div>";
-        $adminEmail = $_POST['adminEmail'];
-        $adminPass = $_POST['adminPass'];
-        $sql = "SELECT * FROM `admin` WHERE admin_email = '$adminEmail' AND admin_password = '$adminPass' ";
-        $result = $conn->query($sql);
-                // check the query if excute or not
-                if ($result) {
-
-                    $arry = mysqli_num_rows($result);
-
-                    if ($arry > 0) {
-                        $Login_sucess = 1;
-                        header("Location:/Website_Php_Mysql_Pure/");
-                        exit;
-                    } else {
-                        $Login_fail = 1;
-                    }
-                    
-        }
-    }
-
-?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silicon | login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>add cites | silicon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js">
 </head>
 <body>
-
+  
 <?php 
-    
-  if ($Login_sucess) {
-    echo "
-      <div class=message-header has-background-primary	>
-        <p>good newi secces login</p>
-        <button class=delete aria-label=delete></button>
-      </div>";
-  }
-
-  if ($Login_fail) {
-    echo "
-      <div class=message-header has-background-primary	>
-        <p>bad newi login fail</p>
-        <button class=delete aria-label=delete></button>
-      </div>";
-  }
+    if (isset($_GET['id']) ) {
+        $id = $_GET['city_id'];
+        $sql = "SELECT * FROM  cities WHERE city_id = '$id' LIMIT 1 ";
+        $result = $conn->query($sql);
+                // check the query if excute or not
+                if (!$result) {
+                    die ('not table'.$conn->$error);
+                    
+                    
+                }
+        $row = mysqli_fetch_assoc($result);
+    }
+   
 ?>
 
+
+
+
+
+
 <div class="formbold-main-wrapper">
-<h2>login to our webiste</h2>
-<div class="formbold-form-wrapper">
-  <form action="" method="POST">
-      <div class="formbold-input-flex">
-        
-        <div>
-            <label for="adminEmail" class="formbold-form-label"> email  </label>
-            
-            <input
-            type="text"
-            name="adminEmail"
-            id="lastname"
-            placeholder="Cooper"
-            class="formbold-form-input"
-            />
-        </div>
-      </div>
 
-      <div class="formbold-input-flex">
-        <div>
-            <label for="adminPass" class="formbold-form-label"> password </label>
-            <input
-            type="text"
-            name="adminPass"
-            id="email"
-            placeholder="jhon@mail.com"
-            class="formbold-form-input"
-            />
-        </div>
-      </div>
-
-      <button type="submit" class="formbold-btn">
-          Submit
-      </button>
-  </form>
+  <div class="formbold-form-wrapper">
+    <form action="" method="POST">
+        <div class="formbold-input-flex">
+          <div>
+              <label for="citeName" class="formbold-form-label"> Add Your Cities </label>
+              <input
+              type="text"
+              name="citeName"
+              id="citeName"
+              placeholder="cites"
+              class="formbold-form-input"
+              value="<?php echo $row['city_name']  ?>"
+              />
+          </div>
+         
+        <button type="submit" class="formbold-btn">
+            Submit
+        </button>
+    </form>
+  </div>
 </div>
-</div>
-</body>
-</html>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   * {
@@ -240,3 +195,7 @@
 
 </style>
 
+
+<?php require_once aze.'static/footer.php'; ?>
+</body>
+</html>

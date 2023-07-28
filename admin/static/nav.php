@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
 </head>
+
 <body>
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <a class="navbar-item" href=" ">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
     </a>
 
@@ -32,10 +32,10 @@
             </a>
 
         <div class="navbar-dropdown">
-            <a class="navbar-item">
+            <a href=" <?php echo BaseURLAdmin.'cities/addCites.php' ?> " class="navbar-item">
                add
             </a>
-            <a class="navbar-item">
+            <a  href=" <?php echo BaseURLAdmin.'cities/allCities.php' ?> " class="navbar-item">
                 view all
             </a>
         </div>
@@ -80,7 +80,7 @@
             </a>
 
         <div class="navbar-dropdown">
-            <a class="navbar-item" href=" <?php echo BaseURLAdmin."add.php"; ?> ">
+            <a class="navbar-item" href="<?php echo BaseURLAdmin."add.php"; ?>">
               add
             </a>
             <a class="navbar-item">
@@ -98,10 +98,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a href=" <?php echo BaseURLAdmin."add.php"; ?> " class="button is-primary">
             <strong>Sign up</strong>
           </a>
-          <a class="button is-light">
+          <a href="<?php echo BaseURLAdmin."login.php"; ?>" class="button is-light">
             Log in
           </a>
         </div>
