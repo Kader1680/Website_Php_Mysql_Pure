@@ -15,19 +15,19 @@
 <body>
   
 <?php 
-    if (isset($_GET['id']) ) {
-        $id = $_GET['city_id'];
-        $sql = "SELECT * FROM  cities WHERE city_id = '$id' LIMIT 1 ";
-        $result = $conn->query($sql);
-                // check the query if excute or not
-                if (!$result) {
-                    die ('not table'.$conn->$error);
-                    
-                    
-                }
-        $row = mysqli_fetch_assoc($result);
+    // if (!isset($_GET['city_id']) ) {
+    //     echo ',onnn';
+    // }
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+      $id = $_GET['city_id'];
+      $sql = "SELECT * FROM `cities`  WHERE `city_id`='$id' LIMIT 1 ";
+      $result = mysqli_query($conn,$sql);
+      $check = mysqli_num_rows($result);
+      $row = mysqli_fetch_assoc($result);
     }
-   
+    
+    
+    
 ?>
 
 
@@ -38,7 +38,7 @@
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
-    <form action="" method="POST">
+    <form action=" <?php echo BaseURLAdmin.'cities/allCities.php' ?> " method="POST">
         <div class="formbold-input-flex">
           <div>
               <label for="citeName" class="formbold-form-label"> Add Your Cities </label>

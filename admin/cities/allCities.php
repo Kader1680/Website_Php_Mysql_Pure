@@ -38,7 +38,7 @@
               echo  "<tr>
                             <td><h4 class='text-black'>$row[city_id]</h4></td>
                             <td><h4 class='text-black'>$row[city_name]</h4></td>
-                            <td><a href='editCity.php ' >edit</a></td>
+                            <td><a href='editCity.php?city_id=$row[city_id] ' >edit</a></td>
                             <td><a >delete]</a></td>
                             
                         </tr>

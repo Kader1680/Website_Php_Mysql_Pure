@@ -23,7 +23,7 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item">
+      <a class="navbar-item" href=" <?php echo BaseURLAdmin."home.php" ?> ">
         Home
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
