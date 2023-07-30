@@ -10,6 +10,7 @@
         $citeName = $_POST['citeName'];
         $sql = "INSERT INTO cities (city_name)". "VALUE ('$citeName') ";
         $result = $conn->query($sql);
+        header('location:allCities.php');
                 // check the query if excute or not
                 if (!$result) {
                     die ('not table'.$conn->$error);

@@ -29,7 +29,25 @@
     
     
 ?>
+<?php 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $citeName = $_POST['citeName'];
 
+        // UPDATE Customers SET ContactName='Juan' WHERE Country='Mexico';
+        $sql = "UPDATE cities  SET `city_name` =  '$citeName'  ";
+        $result = $conn->query($sql);
+
+        header('location:allCities.php');
+
+                // check the query if excute or not
+                if (!$result) {
+                    die ('not table'.$conn->$error);
+                    
+                    
+        }
+    }
+
+?>
 
 
 
@@ -38,7 +56,7 @@
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
-    <form action=" <?php echo BaseURLAdmin.'cities/update.php' ?> " method="POST">
+    <form action=" " method="POST">
         <div class="formbold-input-flex">
           <div>
               <label for="citeName" class="formbold-form-label"> Add Your Cities </label>
