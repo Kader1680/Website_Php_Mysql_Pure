@@ -38,7 +38,7 @@
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
-    <form action=" <?php echo BaseURLAdmin.'cities/allCities.php' ?> " method="POST">
+    <form action=" <?php echo BaseURLAdmin.'cities/update.php' ?> " method="POST">
         <div class="formbold-input-flex">
           <div>
               <label for="citeName" class="formbold-form-label"> Add Your Cities </label>
