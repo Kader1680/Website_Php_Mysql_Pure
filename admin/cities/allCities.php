@@ -45,8 +45,6 @@
                         </tr>
                         ";
             }
-          }else{
-            echo "<h2> No data add yet  </h2>";
           }
 
 ?>
@@ -58,7 +56,7 @@
 
 table {
   
-  background: #014055;
+  background: #00d1b2;
   border-radius: 0.25em;
   border-collapse: collapse;
   margin: 1em auto;

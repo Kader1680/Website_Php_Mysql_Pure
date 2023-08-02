@@ -7,47 +7,61 @@
 <?php 
     $signuser = 0;
     $existuser = 0;
+    $emty = 0;
+    $email = 0;
+    $pass = 0;
+
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      // 
-        // echo "<div class=bg-danger> asi zebi</div>";
+
         $adminName = $_POST['adminName'];
         $adminEmail = $_POST['adminEmail'];
         $adminPass = $_POST['adminPass'];
-        // if (checkEmpty($firstname)) {
-        //   echo "zebi";
-        // } else {
-        //   echo "null";
-        // }
-        // checkEmpty($firstname);
         
-
-        $sql = "SELECT * FROM `admin` WHERE `admin_name` = '$adminName' ";
-
-        $result = $conn->query($sql);
-                // check the query if excute or not
-                if ($result) {
-
-                    $arry = mysqli_num_rows($result);
-
-                    if ($arry > 0) {
-                        $existuser = 1;
-                      
-                    } else {
-                      $sql = "INSERT INTO admin (admin_name, admin_email, admin_password)". 
-                      "VALUES ('$adminName', '$adminEmail', '$adminPass')";
-                      // $sucess = dbInsert($sql);
-                      $result = $conn->query($sql);
-                // check the query if excute or not
-                        if ($result) {
-                                 $signuser = 1;
-
-                      }else{
-                           die ('not table'.$conn->$error);
-
-                      }
-                    }
-                    
+        
+        if (empty($adminName) or empty($adminEmail) or empty($adminPass)) {
+          
+          $emty = 1;
+          
         }
+        if (!filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
+            $email = 1;
+        }
+        $number    = preg_match('@[0-9]@', $adminPass);
+        if(!$number) {
+            $pass = 1;
+        }
+        else{
+          $HashPass = password_hash($adminPass, PASSWORD_DEFAULT);
+          $sql = "SELECT * FROM `admin` WHERE `admin_name` = '$adminName' ";
+
+          $result = $conn->query($sql);
+                  
+                  if ($result) {
+  
+                      $arry = mysqli_num_rows($result);
+  
+                      if ($arry > 0) {
+                          $existuser = 1;
+                        
+                      } else {
+                        $sql = "INSERT INTO admin (admin_name, admin_email, admin_password)". 
+                        "VALUES ('$adminName', '$adminEmail', '$HashPass')";
+                        $result = $conn->query($sql);
+                          if ($result) {
+                                   $signuser = 1;
+                                   header('Location:home.php');
+  
+                        }else{
+                             die ('not table'.$conn->$error);
+  
+                        }
+                      }
+                      
+          }
+        }
+
+        
     }
 
 ?>
@@ -73,7 +87,7 @@
       <div class=message-heade has-background-primary	>
         <p>Register was succesfuky</p>
         <button class=delete aria-label=delete></button>
-      </div>";
+      </div> ";
   }
   if ($existuser) {
     echo "
@@ -81,6 +95,24 @@
         <p>User data is already exit</p>
         <button class=delete aria-label=delete></button>
       </div>";
+  }
+  if ($emty) {
+    echo "
+        <div class=warning>Don't Accept Empty Value Try Again</div>
+    
+    ";
+  }
+  if ($email) {
+    echo "
+        <div class=error> not a valid email address</div>
+    
+    ";
+  }
+  if ($pass) {
+    echo "
+        <div class=info>Password must conatain number character</div>
+    
+    ";
   }
 ?>
 
@@ -124,47 +156,6 @@
               />
           </div>
         </div>
-
-        <div class="formbold-input-radio-wrapper">
-            <label for="jobtitle" class="formbold-form-label"> What are you looking for? </label>
-
-            <div class="formbold-radio-flex">
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label">
-                  <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                  Web Design
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label">
-                  <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                  Graphics Design
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label">
-                  <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                  Logo Design
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-
-              <div class="formbold-radio-group">
-                <label class="formbold-radio-label">
-                  <input class="formbold-input-radio" type="radio" name="jobtitle" id="jobtitle">
-                  Others
-                  <span class="formbold-radio-checkmark"></span>
-                </label>
-              </div>
-            </div>
-        </div>
-
-        
-
         <button type="submit" class="formbold-btn">
             Submit
         </button>
@@ -305,7 +296,38 @@
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
-
+  .info, .success, .warning, .error, .validation {
+			border: 1px solid;
+			margin: 10px 0px;
+			padding: 15px 10px 15px 50px;
+			background-repeat: no-repeat;
+			background-position: 10px center;
+		}
+		.info {
+			color: #00529B;
+			background-color: #BDE5F8;
+			background-image: url('https://i.imgur.com/ilgqWuX.png');
+		}
+		.success {
+			color: #4F8A10;
+			background-color: #DFF2BF;
+			background-image: url('https://i.imgur.com/Q9BGTuy.png');
+		}
+		.warning {
+			color: #9F6000;
+			background-color: #FEEFB3;
+			background-image: url('https://i.imgur.com/Z8q7ww7.png');
+		}
+		.error{
+			color: #D8000C;
+			background-color: #FFBABA;
+			background-image: url('https://i.imgur.com/GnyDvKN.png');
+		}
+		.validation{
+			color: #D63301;
+			background-color: #FFCCBA;
+			background-image: url('https://i.imgur.com/GnyDvKN.png');
+		}
 </style>
 <?php require_once aze.'static/footer.php'; ?>
 

@@ -8,6 +8,7 @@
             $id = $_GET['city_id'];
             $sql = "DELETE FROM cities WHERE city_id = '$id' LIMIT 1 ";
             $result = $conn->query($sql);
+            header('location:allCities.php');
                 // check the query if excute or not
                 if (!$result) {
                     die ('not table'.$conn->$error);

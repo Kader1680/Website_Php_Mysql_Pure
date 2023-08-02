@@ -26,7 +26,7 @@
 
                     if ($arry > 0) {
                         $Login_sucess = 1;
-                        header("Location:/Website_Php_Mysql_Pure/");
+                        header("Location:home.php");
                         exit;
                     } else {
                         $Login_fail = 1;

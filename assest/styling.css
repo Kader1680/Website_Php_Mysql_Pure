@@ -1,0 +1,20 @@
+header img {
+    height: 574px;
+    width: 100%;
+    opacity: .4;
+    position: relative;
+}   
+
+header h2{
+    position: absolute;
+    top: 28%;
+    left: 27%;
+    text-align: center;
+    width: 50%;
+    font-size: 2rem;
+    color: #3CDCC4;
+    font-weight: bolder;
+}
+.content div div h3, p{
+    text-align: center;
+}

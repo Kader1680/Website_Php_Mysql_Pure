@@ -34,7 +34,7 @@
         $citeName = $_POST['citeName'];
 
         // UPDATE Customers SET ContactName='Juan' WHERE Country='Mexico';
-        $sql = "UPDATE cities  SET `city_name` =  '$citeName'  ";
+        $sql = "UPDATE cities  SET `city_name` =  '$citeName' LIMIT 1  ";
         $result = $conn->query($sql);
 
         header('location:allCities.php');

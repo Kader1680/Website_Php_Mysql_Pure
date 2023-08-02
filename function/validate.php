@@ -1,9 +1,6 @@
 <?php 
-    function checkEmpty($value){
-        if (empty($value)) {
-            echo "false";
-        }
-        echo "true";
-    }
 
+    function PassValidate($value){
+        
+    }
 ?>
