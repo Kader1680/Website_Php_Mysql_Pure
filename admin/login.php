@@ -64,7 +64,6 @@
 ?>
 
 <div class="formbold-main-wrapper">
-<h2>login to our webiste</h2>
 <div class="formbold-form-wrapper">
   <form action="" method="POST">
       <div class="formbold-input-flex">

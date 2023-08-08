@@ -42,36 +42,8 @@
       </div>
 
 
-      <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              services
-            </a>
+      
 
-        <div class="navbar-dropdown">
-            <a class="navbar-item">
-              add
-            </a>
-            <a class="navbar-item">
-            view all
-            </a>
-        </div>
-      </div>
-
-
-      <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              oredes
-            </a>
-
-        <div class="navbar-dropdown">
-            <a class="navbar-item">
-              add 
-            </a>
-            <a class="navbar-item">
-            view all
-            </a>
-        </div>
-      </div>
 
 
       <div class="navbar-item has-dropdown is-hoverable">
@@ -83,7 +55,7 @@
             <a class="navbar-item" href="<?php echo BaseURLAdmin."add.php"; ?>">
               add
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href =" <?php echo BaseURLAdmin."allAdmin.php"; ?> ">
               view all
             </a>
         </div>

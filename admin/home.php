@@ -20,30 +20,6 @@
             Diagnostic, conseils et ordonnance en ligne : consultation médicale sans rendez-vous ni face-à-face avec votre médecin en ligne ZAVA.
         </h2>
     </header>
-    <div class="content">
-        <h2 class="text-center">Comment ça marche ?</h2>
-        <div class="row">
-            <div class=" col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <img src="../cdxi8fvytatfjyywck75.png" alt="">
-                <h3>1. Consultation</h3>
-                <p>Vous remplissez un questionnaire de santé en ligne.</p>
-            </div>
-            <div class=" col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <img src="../cdxi8fvytatfjyywck75.png" alt="">
-                <h3>1. Consultation</h3>
-                <p>Vous remplissez un questionnaire de santé en ligne.</p>
-            </div>
-            <div class=" col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <img src="../cdxi8fvytatfjyywck75.png" alt="">
-                <h3>1. Consultation</h3>
-                <p>Vous remplissez un questionnaire de santé en ligne.</p>
-            </div>
-            <div class=" col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <img src="../cdxi8fvytatfjyywck75.png" alt="">
-                <h3>1. Consultation</h3>
-                <p>Vous remplissez un questionnaire de santé en ligne.</p>
-            </div>
-        </div>
-    </div>
+   
 </body>
 </html>

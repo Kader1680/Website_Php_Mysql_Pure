@@ -1,18 +1,15 @@
-<?php  require_once '../../config.php'; ?>
+<?php  require_once '../config.php'; ?>
 <?php require_once aze.'static/nav.php'; ?>
 <?php require_once BL.'function/db.php'; ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<style>
-  .fl-table {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.fl-table {
     border-radius: 5px;
     font-size: 12px;
     font-weight: normal;
@@ -114,47 +111,40 @@
         text-align: center;
     }
 }
-</style>
+    </style>
+</head>
 <body>
-  
-
-
 <table class=fl-table>
         <thead>
             <tr>
-                <th>City Name </th>
-                <th>Action</th>
+                <th>User Name</th>
+                <th>User Email</th>
                 
             </tr>
         </thead>
         <tbody>
         
-    <?php 
+<?php 
 
-          $sql = "SELECT * FROM cities";
-          $result = $conn->query($sql);
+$sql = "SELECT * FROM admin ";
+$result = $conn->query($sql);
+if ($result-> num_rows > 0) {
+    while($row = $result->fetch_assoc()){
+        echo "
+        <tr>
+            <td>$row[admin_name]</td>
+            <td>$row[admin_email]</td>
+        </tr>
+       
+        ";
+    }
+}
 
-          if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              echo  "
-                        <tr>
-                        <td><h4 class='text-black'>$row[city_name]</h4></td>
-                        <td><a href='editCity.php?city_id=$row[city_id] ' >edit</a>  <a href='delete.php?city_id=$row[city_id] ' >delete</a></td>
-                    </tr>
-                        ";
-            }
-          }
 
 ?>
        
        <tbody>
    </table>
-
-
 </body>
 </html>
-
-
-
 
