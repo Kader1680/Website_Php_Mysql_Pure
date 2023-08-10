@@ -189,7 +189,6 @@
 
   .formbold-btn {
     text-align: center;
-    width: 100%;
     font-size: 16px;
     border-radius: 5px;
     padding: 14px 25px;
@@ -198,11 +197,24 @@
     background-color: #6A64F1;
     color: white;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 35px;
   }
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
+
+@media(max-width:767px){
+  .formbold-btn {
+    width: 36%;
+  }
+}
+@media(min-width:768px){
+  .formbold-btn {
+    width: 20%;
+  }
+}
+
+
 
 </style>
 

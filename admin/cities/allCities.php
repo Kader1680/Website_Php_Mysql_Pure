@@ -9,16 +9,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
+    .mytable{
+
+    }
   .fl-table {
     border-radius: 5px;
     font-size: 12px;
     font-weight: normal;
     border: none;
-    border-collapse: collapse;
-    width: 100%;
+    width: 50%;
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
@@ -36,13 +38,13 @@
 
 .fl-table thead th {
     color: #ffffff;
-    background: #4FC3A1;
+    background: #6A64F1;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #324960;
+    background: #6A64F1 ;
 }
 
 .fl-table tr:nth-child(even) {
@@ -53,7 +55,7 @@
 
 @media (max-width: 767px) {
     .fl-table {
-        display: block;
+        /* display: block; */
         width: 100%;
     }
     .table-wrapper:before{
@@ -113,12 +115,23 @@
         display: block;
         text-align: center;
     }
+    .delete{
+    color: white;
+    padding: 8px;
+    background-color: #ff7b7b;
+    }
+    .edit{
+    color: white;
+    padding: 8px;
+    background-color: #04be63;
+    }
 }
 </style>
 <body>
   
 
 
+<div class="mytable">
 <table class=fl-table>
         <thead>
             <tr>
@@ -138,11 +151,14 @@
             // output data of each row
             while($row = $result->fetch_assoc()) {
               echo  "
-                        <tr>
+                    <tr>
                         <td><h4 class='text-black'>$row[city_name]</h4></td>
-                        <td><a href='editCity.php?city_id=$row[city_id] ' >edit</a>  <a href='delete.php?city_id=$row[city_id] ' >delete</a></td>
+                        <td>
+                            <a class='edit' href='editCity.php?city_id=$row[city_id]'><i class='fa-solid fa-pen-to-square'></i></a>  
+                            <a class='delete' href='delete.php?city_id=$row[city_id]'><i class='fa-solid fa-trash'></i></a>
+                        </td>
                     </tr>
-                        ";
+            ";
             }
           }
 
@@ -150,6 +166,7 @@
        
        <tbody>
    </table>
+</div>
 
 
 </body>

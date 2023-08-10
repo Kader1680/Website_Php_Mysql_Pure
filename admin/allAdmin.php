@@ -9,13 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-.fl-table {
+.mytable{
+        
+    }
+  .fl-table {
     border-radius: 5px;
     font-size: 12px;
     font-weight: normal;
     border: none;
-    border-collapse: collapse;
-    width: 100%;
+    width: 50%;
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
@@ -33,13 +35,13 @@
 
 .fl-table thead th {
     color: #ffffff;
-    background: #4FC3A1;
+    background: #6A64F1;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #324960;
+    background: #6A64F1 ;
 }
 
 .fl-table tr:nth-child(even) {
@@ -50,7 +52,7 @@
 
 @media (max-width: 767px) {
     .fl-table {
-        display: block;
+        /* display: block; */
         width: 100%;
     }
     .table-wrapper:before{
@@ -109,6 +111,18 @@
     .fl-table tbody td {
         display: block;
         text-align: center;
+    }
+    a:nth-child(1){
+        background-color: #6f6f6f;
+    color: white;
+    padding: 8px;
+    background-color: red;
+    }
+    a:nth-child(1){
+        background-color: #6f6f6f;
+    color: white;
+    padding: 8px;
+    background-color: red;
     }
 }
     </style>

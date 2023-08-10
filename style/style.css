@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<!-- Coding by MultiWebPress /////// https://multiwebpress.com/ -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Navigation Bar | MultiWebPress</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
 *{
   margin: 0;
@@ -20,7 +9,7 @@
 
 header{
   height: 90px;
-  background: #fa7E5c;
+  background: #546FE7;
 }
 
 .inner-width{
@@ -72,7 +61,7 @@ header{
 }
 
 a.aj_btn {
-  background: #6A64F1;
+  background: #273b91;
   color: #fff;
   font-weight: 500;
   letter-spacing: 2px;
@@ -130,89 +119,5 @@ a.aj_btn:hover{
 
   .navigation-menu.active{
     display: block;
-  z-index: 99;
-
   }
 }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="inner-width">
-        <h1 class="logo">fd</h1>
-        <i class="menu-toggle-btn fas fa-bars"></i>
-        <nav class="navigation-menu">
-          <a href="<?php echo BaseURLAdmin."home.php" ?>">Home</a>
-          <a href="<?php echo BaseURLAdmin."cities/addCites.php" ?>">Add Cities</a>
-          <a href="<?php echo BaseURLAdmin."cities/allCities.php" ?>">View All Cities</a>
-          <a href="<?php echo BaseURLAdmin."allAdmin.php" ?>">View All admin</a>
-          <a href="<?php echo BaseURLAdmin."login.php" ?>" class="aj_btn">Login</a>
-          <a href="<?php echo BaseURLAdmin."add.php" ?>" class="aj_btn">Sign In</a>
-        </nav>
-      </div>
-    </header>
-    <script src="/Website_Php_Mysql_Pure/scripts/js.js"></script>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
