@@ -11,7 +11,7 @@
 
 <?php 
     $Login_fail = 0;
-    $Login_sucess = 0;
+  
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // 
         // echo "<div class=bg-danger> asi zebi</div>";
@@ -26,7 +26,6 @@
                     $arry = mysqli_num_rows($result);
 
                     if ($arry > 0) {
-                        $Login_sucess = 1;
                         header("Location:/Website_Php_Mysql_Pure");
                         // exit;
                     } else {
@@ -51,10 +50,12 @@
 <?php 
     
  
-
-  // if ($Login_sucess) {
-  //   header('location:/');
-  // }
+    if ($Login_fail) {
+      echo "
+      <div class=error>somthinf wrong please try agin</div>
+      ";
+    }
+    
 ?>
 
 <div class="formbold-main-wrapper">
