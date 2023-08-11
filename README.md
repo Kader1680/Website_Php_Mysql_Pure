@@ -8,6 +8,10 @@
 <img src ="./screeshotProjecy/5.png" />
 <img src ="./screeshotProjecy/6.png" />
 <img src ="./screeshotProjecy/7.png" />
+<h3>Overview About DataBase Insert Data</h3>
+<img src ="./screeshotProjecy/8.png" />
+<img src ="./screeshotProjecy/9.png" />
+
 
 1- Install XAMPP
 
