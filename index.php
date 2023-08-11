@@ -20,12 +20,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js">
 </head>
 <style>
- <?php include'./style.css' ?>
+    <?php include'./style.css' ?>
 </style>
 <body>
-    <div>
-		ghghghgh
+    <div class="head">
+		<div class="content text-center">
+            <h2>Welcome to CRUD application php mysql website</h2>
+            <button class=" aj_btn">
+                <a class=" text-white" href=" <?php echo BaseURL."admin/cities/addCites.php" ?>  ">Get Start</a>
+            </button>
+        </div>
 	</div>
+    <?php require_once aze.'/static/footer.php' ; ?>
 </body>
 </html>
 
