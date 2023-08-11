@@ -1,7 +1,9 @@
 # Website_Php_Mysql_Pure
 
 <h3>Overview About Project</h3>
-<vedio src="./screeshotProjecy/scrnli_8_11_2023_7-54-41 PM.mp4"> </vedio>
+<video width="320" height="240" controls>
+  <source src="./screeshotProjecy/scrnli_8_11_2023_7-54-41 PM.mp4" type="video/mp4">
+</video>
 <h3>ScreenShot About Project</h3>
 <img src ="./screeshotProjecy/1.png" />
 <img src ="./screeshotProjecy/2.png" />
