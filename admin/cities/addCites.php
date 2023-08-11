@@ -4,13 +4,13 @@
 
 
 <?php 
-    $signuser = 0;
-    $existuser = 0;
+   
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $citeName = $_POST['citeName'];
         $sql = "INSERT INTO cities (city_name)". "VALUE ('$citeName') ";
         $result = $conn->query($sql);
-        header('location:allCities.php');
+        echo "<script>window.location.href='allCities.php' </script>";
+       
                 // check the query if excute or not
                 if (!$result) {
                     die ('not table'.$conn->$error);
@@ -30,33 +30,12 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js">
 </head>
-<style>
- <?php include'../../style.css' ?>
-
-
-</style>
 <body>
   
 
 
 
 
-<?php 
-    if ($signuser) {
-      echo "
-      <div class=message-heade has-background-primary	>
-        <p>Register was succesfuky</p>
-        <button class=delete aria-label=delete></button>
-      </div>";
-  }
-  if ($existuser) {
-    echo "
-      <div class=message-header has-background-primary	>
-        <p>User data is already exit</p>
-        <button class=delete aria-label=delete></button>
-      </div>";
-  }
-?>
 
 
 <div class="formbold-main-wrapper">
@@ -81,6 +60,7 @@
     </form>
   </div>
 </div>
+
 
 
 

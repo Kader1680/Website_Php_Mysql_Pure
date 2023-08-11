@@ -55,6 +55,7 @@
    </table>
 </div>
 
+<?php require_once aze.'static/footer.php'; ?>
 
 </body>
 </html>
