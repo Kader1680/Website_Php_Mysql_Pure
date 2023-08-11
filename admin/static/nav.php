@@ -142,7 +142,7 @@ a.aj_btn:hover{
         <h1 class="logo">fd</h1>
         <i class="menu-toggle-btn fas fa-bars"></i>
         <nav class="navigation-menu">
-          <a href="<?php echo BaseURLAdmin."home.php" ?>">Home</a>
+          <a href="<?php echo BaseURL."index.php" ?>">Home</a>
           <a href="<?php echo BaseURLAdmin."cities/addCites.php" ?>">Add Cities</a>
           <a href="<?php echo BaseURLAdmin."cities/allCities.php" ?>">View All Cities</a>
           <a href="<?php echo BaseURLAdmin."allAdmin.php" ?>">View All admin</a>

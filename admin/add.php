@@ -123,22 +123,22 @@
     <form action="" method="POST">
         <div class="formbold-input-flex">
           <div>
-              <label for="adminName" class="formbold-form-label"> name </label>
+              <label for="adminName" class="formbold-form-label"> Name </label>
               <input
               type="text"
               name="adminName"
               id="adminPass"
-              placeholder="Jane"
+              placeholder="Abdel"
               class="formbold-form-input"
               />
           </div>
           <div>
-              <label for="adminEmail" class="formbold-form-label"> email  </label>
+              <label for="adminEmail" class="formbold-form-label"> Email  </label>
               <input
               type="text"
               name="adminEmail"
               id="lastname"
-              placeholder="Cooper"
+              placeholder="Abdel@gmail.com"
               class="formbold-form-input"
               />
           </div>
@@ -146,12 +146,12 @@
 
         <div class="formbold-input-flex">
           <div>
-              <label for="adminPass" class="formbold-form-label"> password </label>
+              <label for="adminPass" class="formbold-form-label"> Password </label>
               <input
               type="text"
               name="adminPass"
               id="email"
-              placeholder="jhon@mail.com"
+              placeholder="abdel123"
               class="formbold-form-input"
               />
           </div>

@@ -75,7 +75,7 @@
             type="text"
             name="adminEmail"
             id="lastname"
-            placeholder="Cooper"
+            placeholder="Abdelkader"
             class="formbold-form-input"
             />
         </div>
@@ -88,7 +88,7 @@
             type="text"
             name="adminPass"
             id="email"
-            placeholder="jhon@mail.com"
+            placeholder="Abdel@mail.com"
             class="formbold-form-input"
             />
         </div>
@@ -113,10 +113,14 @@
     font-family: "Inter", sans-serif;
   }
   .formbold-main-wrapper {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     padding: 48px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
   }
 
   .formbold-form-wrapper {
@@ -194,7 +198,8 @@
   }
 
   .formbold-form-input {
-    width: 100%;
+    width: 200%;
+
     padding: 13px 22px;
     border-radius: 5px;
     border: 1px solid #DDE3EC;
@@ -236,6 +241,7 @@
   .formbold-btn:hover {
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
   }
+
 
 </style>
 
